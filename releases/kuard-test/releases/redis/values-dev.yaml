@@ -1,0 +1,33 @@
+global:
+auth:
+  enabled: false
+  sentinel: false
+
+master:
+  count: 1
+  disableCommands: []
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1024Mi
+    limits:
+      memory: 1024Mi
+      cpu: 1000m
+  podAntiAffinityPreset: hard
+
+replica:
+  replicaCount: 1
+  disableCommands: []
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1024Mi
+    limits:
+      memory: 1024Mi
+      cpu: 1000m
+
+sentinel:
+  enabled: false
+
+metrics:
+  enabled: false

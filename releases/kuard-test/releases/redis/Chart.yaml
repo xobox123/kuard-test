@@ -1,0 +1,11 @@
+#  chart      = "bitnami/redis"
+#  version    = "17.3.11"
+
+apiVersion: v2
+name: test-redis
+version: 0.0.0
+
+dependencies:
+  - name: redis
+    version: 17.3.11
+    repository: https://charts.bitnami.com/bitnami
