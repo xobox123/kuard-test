@@ -1,0 +1,7 @@
+creation_rules:
+  - # raw Kubernetes secrets
+    path_regex: \.secret\.(dec|enc)\.yaml$
+    encrypted_regex: ^(data|stringData)$
+    gcp_kms: projects/iceo-dev/locations/europe-west3/keyRings/sops/cryptoKeys/sops-key
+  - # other files
+    gcp_kms: projects/iceo-dev/locations/europe-west3/keyRings/sops/cryptoKeys/sops-key
