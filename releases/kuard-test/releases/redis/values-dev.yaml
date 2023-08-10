@@ -5,10 +5,6 @@ redis:
     sentinel: false
 
   master:
-
-    extraEnvVars:
-     - name: FOO
-       value: "bar"
     count: 1
     disableCommands: []
     resources:
