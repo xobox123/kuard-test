@@ -1,33 +1,38 @@
-global:
-auth:
-  enabled: false
-  sentinel: false
+redis:
+  global:
+  auth:
+    enabled: false
+    sentinel: false
 
-master:
-  count: 1
-  disableCommands: []
-  resources:
-    requests:
-      cpu: 100m
-      memory: 1024Mi
-    limits:
-      memory: 1024Mi
-      cpu: 1000m
-  podAntiAffinityPreset: hard
+  master:
 
-replica:
-  replicaCount: 1
-  disableCommands: []
-  resources:
-    requests:
-      cpu: 100m
-      memory: 1024Mi
-    limits:
-      memory: 1024Mi
-      cpu: 1000m
+    extraEnvVars:
+     - name: FOO
+       value: "bar"
+    count: 1
+    disableCommands: []
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1024Mi
+      limits:
+        memory: 1024Mi
+        cpu: 1000m
+    podAntiAffinityPreset: hard
 
-sentinel:
-  enabled: false
+  replica:
+    replicaCount: 1
+    disableCommands: []
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1024Mi
+      limits:
+        memory: 1024Mi
+        cpu: 1000m
 
-metrics:
-  enabled: false
+  sentinel:
+    enabled: false
+
+  metrics:
+    enabled: false
